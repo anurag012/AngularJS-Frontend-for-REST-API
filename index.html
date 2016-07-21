@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/ng-template" id="add-form.tmpl">
+        <form name="userForm" ng-submit="mainVm.submit()" novalidate>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" name="firstName" id="firstName" ng-model="mainVm.newUser.firstName" placeholder="Your First Name" required minlength="3">
+
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" name="lastName" id="lastName" ng-model="mainVm.newUser.lastName" placeholder="Your Last Name" required minlength="3">
+
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" id="email" ng-model="mainVm.newUser.email" placeholder="example@domain.com" required>
+
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" name="city" id="city" ng-model="mainVm.newUser.city" placeholder="Your City" required>
+
+            </div>
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" class="form-control" name="company" id="company" ng-model="mainVm.newUser.state" placeholder="Your State" required>
+            </div>
+            <input type="submit" class="btn btn-default" value="{{!mainVm.newUser.id ? 'Add User' : 'Update User'}}" ng-disabled="userForm.$invalid">
+        </form>
+    </script>
+</head>
+
+<body>
+<div ng-controller="UsersController as mainVm">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-6" ng-include="'add-form.tmpl'">
+
+            </div>
+            <div class="col-sm-6" ng-include="'views/users.tmpl.html'">
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="controllers/users.controller.js"></script>
+<script src="controllers/user-detail.controller.js"></script>
+<script src="services/user.service.js"></script>
+</body>
+
+</html>
