@@ -3,14 +3,14 @@
 This project creates a frontend using angularJs to perform CRUD operatrions on REST API backend.
 Files for this project are as follows:
 
-## app.js
+### app.js
 
     angular
         .module('plunker',[]);
 
 It simply initializes angular module.
 
-## user.service.js
+### user.service.js
 
 This file works as a connection between frontend and backend. Services are responsible for passing the request URL to server and getting the result.
 I initialized service as: 
@@ -37,7 +37,7 @@ There are functions to perform the appropriate incoming requests and send them t
             return $q.reject('ERROR: ' + response.statusText);
         }
 
-## user.controller.js
+### user.controller.js
 
 Controllers are the most important part of any frontend or backend app. 
 
@@ -57,7 +57,7 @@ Function to get users is:
     }
 Here mainVm is nothing but the alias of "this" keyword. 
 
-## index.html
+### index.html
 
 This is the html file which will be displayed in web browser.
 We intialized the html file as angular app.
